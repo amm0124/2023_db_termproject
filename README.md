@@ -7,6 +7,28 @@
 쇼핑몰 데이터베이스를 구현하였습니다.
 품목 조회 및 구매가 가능할 뿐 아니라, 사이즈 추천, QnA, 장바구니, 답변 메일로 받기, 이벤트 참여 답변 메일로 받기, 환불 등의 기능을 추가적으로 구현하였습니다.
 
+## 구현 언어
+
+python과 postgresql을 사용해서 구현하였습니다.
+
+## 사용 라이브러리 
+
+import psycopg2
+from datetime import datetime, timezone, timedelta,time
+import smtplib
+from tabulate import tabulate
+from email.mime.text import MIMEText
+import sys
+import pandas as pd
+from datetime import datetime
+from sklearn.linear_model import LinearRegression
+
+psycopg2를 사용해서 database와 연결을 했고,
+stmplib와 MiMEText 라이브러리를 사용해서 사용자에게 메일을 보냈습니다.
+Pandas와 tabulate 라이브러리를 사용해서 데이터를 출력하였습니다.
+또한 scikit-learn 선형회귀모델을 사용해서, 유저에게 품목에 대한 사이즈를 추천하는 방식을 사용하였습니다.
+
+
 # 사용자별 소개
 
 쇼핑몰 데이터베이스를 구현하였습니다.
