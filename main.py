@@ -1239,13 +1239,10 @@ def send_mail():
     print("16자리 우측 상단 기기용 앱 비밀번호를 기억해주세요.")
 
     # (*)메일의 발신자 메일 주소, 수신자 메일 주소, 앱비밀번호(발신자)
-    sender = 'amm012450@gmail.com'
-    receiver = 'amm0124@naver.com'
-    app_password = 'okwradwukzflidiq'
 
-    #sender = input("보내는 사람의 구글 계정을 입력해주세요.")
-    #receiver = input("받는 사람의 구글 계정을 입력해주세요.")
-    #app_password = input("16자리 앱 비밀번호를 입력해주세요 : ")
+    sender = input("보내는 사람의 구글 계정을 입력해주세요.")
+    receiver = input("받는 사람의 구글 계정을 입력해주세요.")
+    app_password = input("16자리 앱 비밀번호를 입력해주세요 : ")
 
     with smtplib.SMTP('smtp.gmail.com', 587) as s:  # TLS 암호화
         s.starttls()
@@ -1286,6 +1283,7 @@ def administor_main(administor_id):
         print("프로그램 종료")
         sys.exit()
     administor_main(administor_id)
+    
 def candidate_send_mail(administor_id):
     global user_con
     cursor = user_con.cursor()
@@ -1322,13 +1320,10 @@ def candidate_send_mail(administor_id):
         print("16자리 우측 상단 기기용 앱 비밀번호를 기억해주세요.")
     
         # (*)메일의 발신자 메일 주소, 수신자 메일 주소, 앱비밀번호(발신자)
-        sender = 'amm012450@gmail.com'
-        #receiver = candidate_list[0][0]
-        receiver = selected_candidate
-        app_password = 'okwradwukzflidiq'
+       
     
         sender = input("보내는 사람의 구글 계정을 입력해주세요.")
-        # receiver = input("받는 사람의 구글 계정을 입력해주세요.")
+        receiver = selected_candidate
         app_password = input("16자리 앱 비밀번호를 입력해주세요 : ")
     
         with smtplib.SMTP('smtp.gmail.com', 587) as s:  # TLS 암호화
